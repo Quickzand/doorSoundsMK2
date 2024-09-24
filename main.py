@@ -48,7 +48,7 @@ pygameTime.delay(1000)
 oldIsOpen = False;
 
 while(True):
-    isOpen = GPIO.input(DOOR_SENSOR_PIN);
+    isOpen = not GPIO.input(DOOR_SENSOR_PIN);
     if(isOpen != oldIsOpen):
         if(isOpen):
             playOpenSound();
