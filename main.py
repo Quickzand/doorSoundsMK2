@@ -27,7 +27,7 @@ def playSound(soundFile):
         mixer.music.set_volume(1)
         mixer.music.play()
     except Exception as e:
-        print(f"Error playing sound: {e}")
+        print("Error playing sound: " + str(e))
 
 
 def playOpenSound():
