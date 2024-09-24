@@ -3,11 +3,12 @@ from pygame import mixer, time as pygameTime
 import RPi.GPIO as GPIO
 global recentlyPlayed;
 
+DOOR_SENSOR_PIN = 18
 
 GPIO.setmode(GPIO.BOARD)
+GPIO.setup(DOOR_SENSOR_PIN, GPIO.IN, pull_up_down = GPIO.PUD_DOWN); 
 
 # Connect to power on 17
-DOOR_SENSOR_PIN = 18
 
 SOUNDS_DIRECTORY = "./sounds/"
 
@@ -43,7 +44,7 @@ playCloseSound();
 pygameTime.delay(1000)
 
 
-GPIO.setup(DOOR_SENSOR_PIN, GPIO.IN, pull_up_down = GPIO.PUD_UP); 
+
 oldIsOpen = False;
 
 while(True):
